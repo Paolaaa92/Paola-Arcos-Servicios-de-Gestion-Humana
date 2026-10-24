@@ -1,0 +1,12 @@
+<svg width="760" height="420" viewBox="0 0 760 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Paola Arcos logo</title>
+  <desc id="desc">Monograma PA en azul marino con un trazo dorado.</desc>
+
+  <path d="M70 40H200C288 40 346 90 346 164C346 238 288 288 200 288H150V376H70V40ZM150 96V232H196C246 232 280 212 280 164C280 116 246 96 196 96H150Z" fill="#0F2748"/>
+
+  <path d="M348 376L432 40H520L604 376H525L503 290H449L427 376H348ZM455 236H497L481 156L455 236Z" fill="#0F2748"/>
+
+  <path d="M200 258C240 229 280 210 328 192C399 164 470 152 536 169C600 185 645 214 679 228C634 245 594 249 534 240C470 231 416 238 364 258C311 279 273 306 239 337C214 317 205 291 200 258Z" fill="#D8B57D"/>
+
+  <path d="M205 260C252 236 320 230 392 233C472 236 555 219 626 175C657 156 683 146 700 138" stroke="#D8B57D" stroke-width="22" stroke-linecap="round"/>
+</svg>
