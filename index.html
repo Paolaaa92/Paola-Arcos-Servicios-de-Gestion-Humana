@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paola Arcos, profesional en gerencia de talento humano. Servicios de atracción de personal, desarrollo y gestión humana.">
+  <title>Paola Arcos | Talento humano con propósito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1C1C1C;
+      --sand: #E8DCCB;
+      --gold: #B08D57;
+      --cream: #F7F3ED;
+      --muted: #777067;
+      --accent: #ff3366;
+      --accent-dark: #d91f50;
+      --white: #fff;
+      --shadow: 0 12px 35px rgba(28, 28, 28, 0.09);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Poppins", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(247, 243, 237, 0.96);
+      border-bottom: 1px solid rgba(176, 141, 87, 0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .brand img {
+      width: 150px;
+      height: 62px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 36px);
+    }
+
+    .main-nav a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 180ms ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--gold);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 23px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--white);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--accent-dark);
+      box-shadow: 0 8px 20px rgba(255, 51, 102, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .button:active,
+    .button.is-clicked {
+      background: #a8173e;
+      transform: translateY(1px);
+    }
+
+    .button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(176, 141, 87, 0.7);
+      outline-offset: 3px;
+    }
+
+    .header-cta {
+      min-height: 42px;
+      padding: 9px 18px;
+      font-size: 0.85rem;
+    }
+
+    /* Sección principal con fotografía de fondo y llamado a la acción. */
+    .hero {
+      min-height: 600px;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(28, 28, 28, 0.82) 0%, rgba(28, 28, 28, 0.58) 52%, rgba(28, 28, 28, 0.12) 100%),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=85") center 45% / cover;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 690px;
+      padding-block: 90px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      color: #e6c58f;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin-bottom: 20px;
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1rem, 2vw, 1.14rem);
+    }
+
+    .section {
+      padding-block: 96px;
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading > p:last-child {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    /* Catálogo de seis servicios con imágenes de marca. */
+    .catalog {
+      background: var(--white);
+    }
+
+    .catalog-grid,
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .catalog-card,
+    .benefit-card {
+      overflow: hidden;
+      border: 1px solid rgba(176, 141, 87, 0.12);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .catalog-card:hover,
+    .benefit-card:hover {
+      box-shadow: 0 18px 42px rgba(28, 28, 28, 0.13);
+      transform: translateY(-5px);
+    }
+
+    .catalog-card img {
+      width: 100%;
+      aspect-ratio: 1 / 0.78;
+      object-fit: cover;
+      background: var(--sand);
+    }
+
+    .card-content {
+      padding: 23px 24px 26px;
+    }
+
+    .card-content h3,
+    .benefit-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.15rem;
+      line-height: 1.4;
+    }
+
+    .card-content p,
+    .benefit-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Tres tarjetas que explican el enfoque de trabajo. */
+    .approach {
+      background: var(--cream);
+    }
+
+    .benefit-card {
+      padding: 30px;
+    }
+
+    .benefit-number {
+      display: inline-grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sand);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Formulario accesible para iniciar una conversación. */
+    .contact {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .contact .section-heading > p:last-child {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .contact .eyebrow {
+      color: #e6c58f;
+    }
+
+    .contact-form {
+      width: min(680px, 100%);
+      margin-inline: auto;
+      padding: clamp(24px, 5vw, 42px);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #ded8d0;
+      border-radius: 10px;
+      background: #fffdfa;
+      color: var(--ink);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.14);
+      outline: none;
+    }
+
+    .form-field textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .form-status {
+      min-height: 1.5em;
+      margin: 16px 0 0;
+      color: #286548;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Pie de página y enlaces sociales. */
+    .site-footer {
+      padding-block: 28px;
+      background: #151515;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      font-size: 0.82rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: var(--white);
+      font-size: 0.85rem;
+    }
+
+    .social-links a:hover {
+      color: #e6c58f;
+    }
+
+    /* Control fijo para regresar al inicio tras desplazarse. */
+    .back-to-top {
+      position: fixed;
+      z-index: 9;
+      right: 24px;
+      bottom: 24px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 180ms ease, transform 180ms ease, background-color 180ms ease;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background: var(--accent-dark);
+    }
+
+    @media (max-width: 1024px) {
+      .catalog-grid,
+      .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        min-height: 540px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 32px, 460px);
+      }
+
+      .header-inner {
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 0 12px;
+        padding-block: 8px;
+      }
+
+      .brand img {
+        width: 115px;
+        height: 48px;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 5px 0 3px;
+      }
+
+      .main-nav a {
+        font-size: 0.78rem;
+      }
+
+      .header-cta {
+        min-height: 38px;
+        padding: 7px 13px;
+        font-size: 0.76rem;
+      }
+
+      .hero {
+        min-height: 510px;
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        padding-block: 68px;
+      }
+
+      .section {
+        padding-block: 70px;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .catalog-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .catalog-card img {
+        aspect-ratio: 1 / 0.72;
+      }
+
+      .benefit-card {
+        padding: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .back-to-top {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Paola Arcos, ir al inicio">
+        <img src="imagenes/logo.PNG" alt="Paola Arcos">
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button header-cta" href="#contacto">Hablemos</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección hero: presentación y acceso directo al contacto. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Gerencia de talento humano</p>
+          <h1 id="hero-title">El talento correcto transforma equipos.</h1>
+          <p class="hero-copy">Acompaño a las organizaciones a atraer, desarrollar y cuidar a las personas que hacen crecer cada proyecto.</p>
+          <a class="button" href="#contacto">Conversemos sobre tu equipo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo: seis servicios con las imágenes proporcionadas. -->
+    <section class="section catalog" id="catalogo" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Soluciones para tu organización</p>
+          <h2 id="catalog-title">Un equipo sólido empieza con buenas decisiones</h2>
+          <p>Servicios prácticos y cercanos para cada etapa del ciclo de talento humano.</p>
+        </div>
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=900&q=85" alt="Currículum y documentos de selección sobre un escritorio">
+            <div class="card-content">
+              <h3>Atracción de personal</h3>
+              <p>Encontramos perfiles alineados con las competencias, la cultura y los objetivos de tu empresa.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=85" alt="Equipo colaborando alrededor de una mesa">
+            <div class="card-content">
+              <h3>Desarrollo de personas</h3>
+              <p>Impulsamos habilidades y crecimiento profesional con planes de desarrollo enfocados en resultados.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85" alt="Computador portátil y herramientas de trabajo sobre un escritorio">
+            <div class="card-content">
+              <h3>Entrenamiento en nómina</h3>
+              <p>Capacitación para comprender y optimizar los procesos de liquidación de nómina.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=85" alt="Calculadora y documentos de finanzas sobre un escritorio">
+            <div class="card-content">
+              <h3>Nómina y compensación</h3>
+              <p>Apoyo para estructurar procesos de compensación claros, consistentes y centrados en el bienestar.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Espacio de oficina luminoso para reuniones y asesoría">
+            <div class="card-content">
+              <h3>Asesoría en gestión humana</h3>
+              <p>Orientación estratégica para alinear las prácticas de talento con las necesidades del negocio.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=85" alt="Personas reunidas en una mesa de trabajo">
+            <div class="card-content">
+              <h3>Gestión humana</h3>
+              <p>Procesos que conectan personas y construyen equipos comprometidos y preparados para crecer.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios destacados: tres pilares del acompañamiento profesional. -->
+    <section class="section approach" id="servicios" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Cómo puedo acompañarte</p>
+          <h2 id="approach-title">Gestión humana con intención y resultados</h2>
+          <p>Un acompañamiento que entiende tanto las metas de la organización como las necesidades de su gente.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-number" aria-hidden="true">01</span>
+            <h3>Selección estratégica</h3>
+            <p>Procesos de atracción y selección cuidadosos para incorporar talento que aporte desde el primer día.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-number" aria-hidden="true">02</span>
+            <h3>Equipos que evolucionan</h3>
+            <p>Formación y desarrollo para fortalecer competencias, liderazgo y colaboración en los equipos.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-number" aria-hidden="true">03</span>
+            <h3>Procesos confiables</h3>
+            <p>Asesoría en prácticas de gestión humana, nómina y compensación para dar claridad y confianza.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto: formulario accesible con confirmación en el navegador. -->
+    <section class="section contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Demos el siguiente paso</p>
+          <h2 id="contact-title">Hablemos de lo que tu equipo necesita</h2>
+          <p>Cuéntame brevemente sobre tu organización y me pondré en contacto contigo.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Escribe tu nombre completo" required>
+          </div>
+          <div class="form-field">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required>
+          </div>
+          <div class="form-field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntame qué servicio estás buscando..." required></textarea>
+          </div>
+          <button class="button" type="submit">Enviar mensaje</button>
+          <p class="form-note">Este formulario es una demostración y no envía datos a un servidor.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con derechos reservados y redes sociales. -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="current-year"></span> Paola Arcos. Todos los derechos reservados.</p>
+      <nav class="social-links" aria-label="Redes sociales">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://wa.me/?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20talento%20humano." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver arriba" title="Volver arriba">
+    <span aria-hidden="true">&uarr;</span>
+  </button>
+
+  <script>
+    // Confirma la validación del formulario sin simular un envío a un servidor.
+    const contactForm = document.querySelector("#contact-form");
+    const formStatus = document.querySelector("#form-status");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      const name = new FormData(contactForm).get("nombre").trim();
+      formStatus.textContent = `¡Gracias, ${name}! El formulario se validó correctamente. Para recibir tu mensaje, hace falta conectar un servicio de envío.`;
+      contactForm.reset();
+    });
+
+    // Da una respuesta visual breve al hacer clic en los botones principales.
+    document.querySelectorAll(".button").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.add("is-clicked");
+        window.setTimeout(() => button.classList.remove("is-clicked"), 220);
+      });
+    });
+
+    // Muestra el acceso para volver al inicio después de desplazarse.
+    const backToTop = document.querySelector("#back-to-top");
+    const updateBackToTop = () => {
+      backToTop.classList.toggle("is-visible", window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    updateBackToTop();
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Mantiene actualizado el año de derechos reservados.
+    document.querySelector("#current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
