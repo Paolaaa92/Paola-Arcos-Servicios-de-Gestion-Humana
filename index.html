@@ -84,8 +84,8 @@
     }
 
     .brand img {
-      width: 150px;
-      height: 62px;
+      width: 180px;
+      height: auto;
       object-fit: contain;
       mix-blend-mode: multiply;
     }
@@ -150,7 +150,6 @@
       font-size: 0.85rem;
     }
 
-    /* Sección principal con fotografía de fondo y llamado a la acción. */
     .hero {
       min-height: 600px;
       display: grid;
@@ -223,7 +222,6 @@
       color: var(--muted);
     }
 
-    /* Catálogo de seis servicios con imágenes de marca. */
     .catalog {
       background: var(--white);
     }
@@ -276,7 +274,6 @@
       font-size: 0.92rem;
     }
 
-    /* Tres tarjetas que explican el enfoque de trabajo. */
     .approach {
       background: var(--cream);
     }
@@ -297,7 +294,6 @@
       font-weight: 700;
     }
 
-    /* Formulario accesible para iniciar una conversación. */
     .contact {
       background: var(--ink);
       color: var(--white);
@@ -369,7 +365,6 @@
       font-weight: 500;
     }
 
-    /* Pie de página y enlaces sociales. */
     .site-footer {
       padding-block: 28px;
       background: #151515;
@@ -402,7 +397,6 @@
       color: #e6c58f;
     }
 
-    /* Control fijo para regresar al inicio tras desplazarse. */
     .back-to-top {
       position: fixed;
       z-index: 9;
@@ -459,8 +453,7 @@
       }
 
       .brand img {
-        width: 115px;
-        height: 48px;
+        width: 150px;
       }
 
       .main-nav {
@@ -537,7 +530,7 @@
   <header class="site-header" id="inicio">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="Paola Arcos, ir al inicio">
-        <img src="imagenes/logo.PNG" alt="Paola Arcos">
+        <img src="imagenes/logo-paola.svg" alt="Paola Arcos">
       </a>
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
@@ -550,7 +543,6 @@
   </header>
 
   <main>
-    <!-- Sección hero: presentación y acceso directo al contacto. -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-content">
@@ -562,7 +554,6 @@
       </div>
     </section>
 
-    <!-- Catálogo: seis servicios con las imágenes proporcionadas. -->
     <section class="section catalog" id="catalogo" aria-labelledby="catalog-title">
       <div class="container">
         <div class="section-heading">
@@ -617,7 +608,6 @@
       </div>
     </section>
 
-    <!-- Servicios destacados: tres pilares del acompañamiento profesional. -->
     <section class="section approach" id="servicios" aria-labelledby="approach-title">
       <div class="container">
         <div class="section-heading">
@@ -645,7 +635,6 @@
       </div>
     </section>
 
-    <!-- Contacto: formulario accesible con confirmación en el navegador. -->
     <section class="section contact" id="contacto" aria-labelledby="contact-title">
       <div class="container">
         <div class="section-heading">
@@ -674,7 +663,6 @@
     </section>
   </main>
 
-  <!-- Pie de página con derechos reservados y redes sociales. -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="current-year"></span> Paola Arcos. Todos los derechos reservados.</p>
@@ -690,7 +678,6 @@
   </button>
 
   <script>
-    // Confirma la validación del formulario sin simular un envío a un servidor.
     const contactForm = document.querySelector("#contact-form");
     const formStatus = document.querySelector("#form-status");
 
@@ -703,7 +690,6 @@
       contactForm.reset();
     });
 
-    // Da una respuesta visual breve al hacer clic en los botones principales.
     document.querySelectorAll(".button").forEach((button) => {
       button.addEventListener("click", () => {
         button.classList.add("is-clicked");
@@ -711,7 +697,6 @@
       });
     });
 
-    // Muestra el acceso para volver al inicio después de desplazarse.
     const backToTop = document.querySelector("#back-to-top");
     const updateBackToTop = () => {
       backToTop.classList.toggle("is-visible", window.scrollY > 400);
@@ -724,7 +709,6 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Mantiene actualizado el año de derechos reservados.
     document.querySelector("#current-year").textContent = new Date().getFullYear();
   </script>
 </body>
